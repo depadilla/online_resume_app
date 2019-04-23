@@ -12,34 +12,39 @@
     <!-- <p>Twitter Handle:<a href="">{{ student.twitter_handle }}</a></p> -->
 
     <img v-bind:src="student.photo_url" v-bind:alt="student.last_name" />
-
-    <div>
-      <h4>Edit student</h4>
-      Name:
-      <input type="text" v-model="student.name" />
-      Price:
-      <input type="text" v-model="student.price" />
-      Description:
-      <input type="text" v-model="student.description" />
-      In Stock:
-      <input type="text" v-model="student.instock" />
-      Supplier ID:
-      <input type="text" v-model="student.supplier_id" />
-      User Id:
-      <input type="text" v-model="student.user_id" />
-
-      <button v-on:click="updateProduct(student)">Update student</button>
-      <button v-on:click="destroyProduct(student)">Destroy student</button>
+    <h3>Experience:</h3>
+    <div v-for="experience in student.experiences">
+      <h4>Job Title: {{ experience.job_title }}</h4>
+      <p>Company Name: {{ experience.company_name }}</p>
+      <p>Details: {{ experience.details }}</p>
+      <p>Start Date: {{ experience.start_date }}</p>
+      <p>End Date: {{ experience.end_date }}</p>
     </div>
-    <router-link to="/">Back to all products</router-link>
-    <div id="map"></div>
+    <div>
+      <h3>Capstone:</h3>
+      <p>Description: {{ student.capstone.description }}</p>
+      <p>Project Link: <a v-bind:href="student.capstone.project_url"> </a></p>
+      <p>Screenshot Link: <a v-bind:href="student.capstone.screenshot_url"> </a></p>
+    </div>
+    <div>
+      <h3>Education:</h3>
+      <p>University: {{ student.education.university_name }}</p>
+      <p>Degree: {{ student.education.degree }}</p>
+      <p>Start Date: {{ student.education.start_date }}</p>
+      <p>End Date: {{ student.education.end_date }}</p>
+      <p>Details: {{ student.education.details }}</p>
+    </div>
+    <div>
+      <h3>Skills:</h3>
+      <ul>
+        {{
+          student.skill.skill_name
+        }}
+      </ul>
+    </div>
   </div>
 </template>
-<style>
-#map {
-  height: 300px;
-}
-</style>
+<style></style>
 
 <script>
 import axios from "axios";
@@ -47,45 +52,34 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      product: {}
+      student: {
+        first_name: "Peter",
+        last_name: "Jang",
+        email: "jang@email.com",
+        phone_number: "111-222-3333",
+        short_bio: "Dan sucks",
+        linkedin_url: "linkedin url",
+        twitter_handle: "twitter handle",
+        personal_website: "personal web",
+        online_resume_url: "online reusme url",
+        github_url: "github url",
+        photo_url: "photo",
+        experiences: [],
+        capstones: [],
+        educations: [],
+        skills: []
+      }
     };
   },
   created: function() {
-    axios.get("/api/products/" + this.$route.params.id).then(response => {
-      this.product = response.data;
+    axios.get("/api/students/" + this.$route.params.id).then(response => {
+      this.student = response.data;
     });
-  },
-  // mounted: function() {
-  //   mapboxgl.accessToken =
-  //     "pk.eyJ1IjoicGV0ZXJ4amFuZyIsImEiOiJjam96NnBwZmUycXI4M3FxaTR3aHQwenhkIn0.Fip_rZYF_exdMEDeQTNYoQ";
-  //   var map = new mapboxgl.Map({
-  //     container: "map", // container id
-  //     style: "mapbox://styles/mapbox/streets-v11", // stylesheet location
-  //     center: [-74.5, 40], // starting position [lng, lat]
-  //     zoom: 4 // starting zoom
-  //   });
-  // },
-  methods: {
-    updateProduct: function(product) {
-      var params = {
-        name: product.name,
-        price: product.price,
-        description: product.description,
-        instock: product.instock,
-        supplier_id: product.supplier_id,
-        user_id: product.user_id
-      };
-      axios.patch("/api/products/" + product.id, params).then(response => {
-        console.log("Successfully updated", response.data);
-        product = response.data;
-      });
-    },
-    destroyProduct: function(product) {
-      axios.delete("/api/products/" + product.id).then(response => {
-        console.log("Successfully destroyed product", response.data);
-        this.$router.push("/");
-      });
-    }
   }
+  // mounted: function() {
+  //   this.experiences.forEach(function(experience) {
+
+  //   })
+  // }
 };
 </script>
