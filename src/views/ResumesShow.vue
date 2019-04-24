@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="resumes-show">
     <h2>Name: {{ student.first_name }} {{ student.last_name }}</h2>
 
@@ -6,12 +6,12 @@
     <p>Phone Number: {{ student.phone_number }}</p>
     <p>Short Bio: {{ student.short_bio }}</p>
     <!-- <p>Linkedin: <a href="">{{student.linkedin_url}}</a></p> revisit when linked in is established-->
-    <!-- <p>Twitter Handle:<a href="">{{ student.twitter_handle }}</a></p> -->
-    <!-- <p>Twitter Handle:<a href="">{{ student.twitter_handle }}</a></p> -->
-    <!-- <p>Twitter Handle:<a href="">{{ student.twitter_handle }}</a></p> -->
-    <!-- <p>Twitter Handle:<a href="">{{ student.twitter_handle }}</a></p> -->
+<!-- <p>Twitter Handle:<a href="">{{ student.twitter_handle }}</a></p> -->
+<!-- <p>Twitter Handle:<a href="">{{ student.twitter_handle }}</a></p> -->
+<!-- <p>Twitter Handle:<a href="">{{ student.twitter_handle }}</a></p> -->
+<!-- <p>Twitter Handle:<a href="">{{ student.twitter_handle }}</a></p> -->
 
-    <img v-bind:src="student.photo_url" v-bind:alt="student.last_name" />
+<!--  <img v-bind:src="student.photo_url" v-bind:alt="student.last_name" />
 
     <div>
       <h4>Edit student</h4>
@@ -34,6 +34,15 @@
     <router-link to="/">Back to all products</router-link>
     <div id="map"></div>
   </div>
+</template> -->
+-->
+<template>
+  <div class="resumes-show">
+  <twitter>
+    <a class="twitter-timeline" href="https://twitter.com/realDonaldTrump?ref_src=twsrc%5Etfw"
+      >Tweets by realDonaldTrump</a
+    >
+  </twitter>
 </template>
 <style>
 #map {
