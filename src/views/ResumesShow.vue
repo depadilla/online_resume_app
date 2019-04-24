@@ -60,7 +60,7 @@ export default {
         linkedin_url: "linkedin url",
         twitter_handle: "twitter handle",
         personal_website_url: "personal web",
-        online_resume_url: "online reusme url",
+        online_resume_url: "online resume url",
         github_url: "github url",
         photo_url: "photo",
         experiences: [

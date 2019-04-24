@@ -11,12 +11,9 @@
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
-<<<<<<< HEAD
     "vue-tweet-embed": "^2.2.1",
-    "vue-twitter": "^0.1.0"
-=======
+    "vue-twitter": "^0.1.0",
     "vue2-filters": "^0.6.0"
->>>>>>> 490b3dd3829a4c6e0e36ce6016e7cbc20512296a
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",
