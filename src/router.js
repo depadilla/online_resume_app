@@ -29,7 +29,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ "./views/About.vue")
     },
     {
-      path: "/api/students/2",
+      path: "/api/students/:id",
       name: "resumes-show",
       component: ResumesShow
     }
