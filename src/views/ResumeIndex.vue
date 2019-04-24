@@ -43,7 +43,7 @@ export default {
       message: "Search Profiles!",
       students: [],
       searchFilter: "",
-      sortAttribute: "Frist Name",
+      sortAttribute: "First Name",
       sortAscending: 1
     };
   },
