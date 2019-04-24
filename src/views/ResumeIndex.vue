@@ -22,6 +22,15 @@
       <img v-bind:src="student.photo_url" v-bind:alt="student.first_name" />
       <router-link v-bind:to="`/students/${student.id}`">More info</router-link>
     </div>
+    <a
+      class="twitter-timeline"
+      data-width="500"
+      data-height="500"
+      data-theme="light"
+      href="https://twitter.com/Drake?ref_src=twsrc%5Etfw"
+    >
+      Tweets by Drake
+    </a>
   </div>
 </template>
 
@@ -49,7 +58,7 @@ export default {
   },
   created: function() {
     axios
-      .get("/api/students")
+      .get("https://salty-gorge-38704.herokuapp.com/api/students")
       .then(response => {
         this.students = response.data;
         console.log(this.students);

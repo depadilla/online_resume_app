@@ -23,8 +23,14 @@
     <div>
       <h3>Capstone:</h3>
       <p>Description: {{ student.capstone.description }}</p>
-      <p>Project Link: <a v-bind:href="student.capstone.project_url"> </a></p>
-      <p>Screenshot Link: <a v-bind:href="student.capstone.screenshot_url"> </a></p>
+      <p>
+        Project Link:
+        <a v-bind:href="student.capstone.project_url"></a>
+      </p>
+      <p>
+        Screenshot Link:
+        <a v-bind:href="student.capstone.screenshot_url"></a>
+      </p>
     </div>
     <div>
       <h3>Education:</h3>
@@ -42,6 +48,7 @@
         }}
       </ul>
     </div>
+    <div id="twitter-feed"></div>
   </div>
 </template>
 <style></style>
@@ -76,10 +83,5 @@ export default {
       this.student = response.data;
     });
   }
-  // mounted: function() {
-  //   this.experiences.forEach(function(experience) {
-
-  //   })
-  // }
 };
 </script>
