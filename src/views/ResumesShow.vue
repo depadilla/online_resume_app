@@ -133,15 +133,17 @@ export default {
     };
   },
   // created: function() {
-  //   axios.get("/api/students/" + this.$route.params.id).then(response => {
+  //   axios.get("https://salty-gorge-38704.herokuapp.com/api/students" + this.$route.params.id).then(response => {
   //     this.student = response.data;
   //   });
   // }
   created: function() {
-    axios.get("/api/students/2").then(response => {
-      this.student = response.data;
-    });
+    // axios.get("/api/students/2").then(response => {
+    //   this.student = response.data;
+    // });
   }
+  // TODO: Add this back when backend is set up
+  // }
   // mounted: function() {
   //   this.experiences.forEach(function(experience) {
 
