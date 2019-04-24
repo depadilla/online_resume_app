@@ -16,7 +16,7 @@ export default new Router({
       component: Home
     },
     {
-      path: "/api/resumeindex",
+      path: "/resumeindex",
       name: "ResumeIndex",
       component: ResumeIndex
     },
