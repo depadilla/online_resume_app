@@ -138,6 +138,9 @@ export default {
   //   });
   // }
   created: function() {
+    axios.get("https://salty-gorge-38704.herokuapp.com/api/students/" + this.$route.params.id).then(response => {
+      this.student = response.data;
+    });
     // axios.get("/api/students/2").then(response => {
     //   this.student = response.data;
     // });
