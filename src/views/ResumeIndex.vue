@@ -49,7 +49,7 @@ export default {
   },
   created: function() {
     axios
-      .get("/api/students")
+      .get("https://salty-gorge-38704.herokuapp.com/api/students")
       .then(response => {
         this.students = response.data;
         console.log(this.students);
